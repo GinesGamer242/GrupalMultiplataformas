@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00888034, g: 0.0189526, b: 0.08460656, a: 1}
+  m_IndirectSpecularColor: {r: 0.008880351, g: 0.018952625, b: 0.08460672, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -731,6 +731,7 @@ GameObject:
   - component: {fileID: 329488767}
   - component: {fileID: 329488769}
   - component: {fileID: 329488768}
+  - component: {fileID: 329488770}
   m_Layer: 0
   m_Name: Dumpster_A1 (5)
   m_TagString: Untagged
@@ -803,6 +804,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329488766}
   m_Mesh: {fileID: 5015366502849066352, guid: 3c7d5dece75cf9845ad850601668e7d8, type: 3}
+--- !u!65 &329488770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329488766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.051418, y: 4.619935, z: 1.8029281}
+  m_Center: {x: -5.7052054, y: 2.3075657, z: 0.06402091}
 --- !u!1 &372827523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,6 +2566,7 @@ GameObject:
   - component: {fileID: 992463524}
   - component: {fileID: 992463526}
   - component: {fileID: 992463525}
+  - component: {fileID: 992463527}
   m_Layer: 0
   m_Name: Dumpster_A1 (6)
   m_TagString: Untagged
@@ -2616,6 +2639,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992463523}
   m_Mesh: {fileID: 5015366502849066352, guid: 3c7d5dece75cf9845ad850601668e7d8, type: 3}
+--- !u!65 &992463527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992463523}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.29274, y: 4.619935, z: 1.8029281}
+  m_Center: {x: -3.8258667, y: 2.3075657, z: 0.06402111}
 --- !u!1 &1020337885
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,6 +3916,7 @@ GameObject:
   - component: {fileID: 1390122827}
   - component: {fileID: 1390122829}
   - component: {fileID: 1390122828}
+  - component: {fileID: 1390122830}
   m_Layer: 0
   m_Name: Dumpster_A1 (15)
   m_TagString: Untagged
@@ -3944,6 +3989,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390122826}
   m_Mesh: {fileID: 5015366502849066352, guid: 3c7d5dece75cf9845ad850601668e7d8, type: 3}
+--- !u!65 &1390122830
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390122826}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18.227484, y: 4.619935, z: 1.8029281}
+  m_Center: {x: -5.2932377, y: 2.3075657, z: 0.064020954}
 --- !u!1 &1394698953
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,6 +4731,7 @@ GameObject:
   - component: {fileID: 1686001594}
   - component: {fileID: 1686001596}
   - component: {fileID: 1686001595}
+  - component: {fileID: 1686001597}
   m_Layer: 0
   m_Name: Dumpster_A1 (10)
   m_TagString: Untagged
@@ -4737,6 +4804,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686001593}
   m_Mesh: {fileID: 5015366502849066352, guid: 3c7d5dece75cf9845ad850601668e7d8, type: 3}
+--- !u!65 &1686001597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686001593}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.290047, y: 4.619935, z: 1.8029281}
+  m_Center: {x: -3.7298522, y: 2.3075657, z: 0.0640211}
 --- !u!1001 &1697284796
 PrefabInstance:
   m_ObjectHideFlags: 0

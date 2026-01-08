@@ -5,15 +5,24 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public int maxEnemyAmount;
     public float spawnTime = 4f;
     private float time;
-    // Start is called before the first frame update
-    void Start()
+
+    List<GameObject> activeEnemyPool = new List<GameObject>();
+    Queue<GameObject> inactiveEnemyPool = new Queue<GameObject>();
+
+    private void Start()
     {
-        
+        for (int i = 0; i < maxEnemyAmount; i++)
+        {
+            GameObject newEnemy = Instantiate(enemyPrefab, Vector3.zero, Quaternion.identity);
+            newEnemy.gameObject.SetActive(false);
+
+            inactiveEnemyPool.Enqueue(newEnemy);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
@@ -21,8 +30,8 @@ public class EnemySpawner : MonoBehaviour
         if(time > spawnTime)
         {
             time = 0;
-            var enemyPos = new Vector3(Random.value*50, Random.Range(0f, 5f), Random.value*50) + transform.position;
-            Instantiate(enemyPrefab, enemyPos, Quaternion.identity);
+
+            DeployEnemy();
 
             spawnTime -= 0.3f;
             if(spawnTime < 0.5f)
@@ -30,7 +39,22 @@ public class EnemySpawner : MonoBehaviour
                 spawnTime = 0.5f;
             }
         }
+    }
 
+    public void DeployEnemy()
+    {
+        var enemyPos = new Vector3(Random.value * 50, Random.Range(0f, 5f), Random.value * 50) + transform.position;
+
+        GameObject enemy = inactiveEnemyPool.Dequeue();
+        
+        enemy.transform.position = enemyPos;
+        enemy.SetActive(true);
+
+        activeEnemyPool.Add(enemy);
+    }
+
+    public void RetireEnemy(GameObject)
+    {
 
     }
 }
