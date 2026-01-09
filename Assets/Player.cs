@@ -12,12 +12,6 @@ public class Player : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void getHit()
     {
         health -= 10;

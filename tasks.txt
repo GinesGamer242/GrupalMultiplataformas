@@ -1,9 +1,10 @@
 PERFORMANCE
 
 To do:
-- Replace GameManager's Update checks with events
 
 Doing:
-- Enemy pool instead of instanciating enemies each time they spawn
+- Replace GameManager's Update checks with events
 
 Done:
+- Enemy pool instead of instanciating enemies each time they spawn
+- Bullet pool instead of instantiating bullets when shooting

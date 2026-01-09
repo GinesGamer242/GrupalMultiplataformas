@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if(finished = true)
+        if (finished == true)
         {
             FindObjectOfType<Button>().gameObject.SetActive(true);
         }

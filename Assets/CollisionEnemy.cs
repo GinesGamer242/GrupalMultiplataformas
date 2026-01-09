@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionEnemy : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject enemyObject;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +15,7 @@ public class CollisionEnemy : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
             player.getHit();
             player.health -= 10;
-            GameManager.instance.enemySpawner.RetireEnemy(gameObject);
+            GameManager.instance.enemySpawner.RetireEnemy(enemyObject);
         }
         if (other.CompareTag("Bullet"))
         {
@@ -22,8 +23,9 @@ public class CollisionEnemy : MonoBehaviour
             var player = FindObjectOfType<Player>();
             player.AddPoints(100);
             var bullet = other.transform.parent.GetComponent<BulletBehaviour>();
-            Destroy(bullet.gameObject);
-            GameManager.instance.enemySpawner.RetireEnemy(gameObject);
+            bullet.StopAllCoroutines();
+            GameManager.instance.bulletManager.RetireBullet(other.transform.parent.gameObject);
+            GameManager.instance.enemySpawner.RetireEnemy(enemyObject);
         }
     }
 }

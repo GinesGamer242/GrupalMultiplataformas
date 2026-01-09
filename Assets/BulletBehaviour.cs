@@ -9,11 +9,18 @@ public class BulletBehaviour : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, m_LifeTime);
+        StartCoroutine(RetireBulletCoroutine());
     }
 
     void Update()
     {
         transform.position += transform.forward * m_Speed * Time.deltaTime;
+    }
+
+    IEnumerator RetireBulletCoroutine()
+    {
+        yield return new WaitForSeconds(m_LifeTime);
+
+        GameManager.instance.bulletManager.RetireBullet(gameObject);
     }
 }

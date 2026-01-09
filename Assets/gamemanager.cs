@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -24,18 +25,19 @@ public class GameManager : MonoBehaviour
     public SceneAsset Loss;
 
     public EnemySpawner enemySpawner;
+    public BulletManager bulletManager;
+
+    public UnityEvent onPlayerWin;
+    public UnityEvent onPlayerLose;
 
     private void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log(Cursor.lockState);
-
         if (player.points >= 2000)
         {
             SceneManager.LoadScene(Win.name);

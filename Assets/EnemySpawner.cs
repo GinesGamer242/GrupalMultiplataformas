@@ -9,9 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTime = 4f;
     private float time;
 
-    [SerializeField]
     List<GameObject> activeEnemyPool = new List<GameObject>();
-    [SerializeField]
     Queue<GameObject> inactiveEnemyPool = new Queue<GameObject>();
 
     private void Start()
@@ -46,27 +44,36 @@ public class EnemySpawner : MonoBehaviour
 
     public void DeployEnemy()
     {
-        var enemyPos = new Vector3(Random.value * 50, Random.Range(0f, 5f), Random.value * 50) + transform.position;
+        if (activeEnemyPool.Count <  maxEnemyAmount)
+        {
+            var enemyPos = new Vector3(Random.value * 50, Random.Range(0f, 5f), Random.value * 50) + transform.position;
 
-        GameObject enemy = inactiveEnemyPool.Dequeue();
-        
-        enemy.transform.position = enemyPos;
-        enemy.SetActive(true);
+            GameObject enemy = inactiveEnemyPool.Dequeue();
 
-        activeEnemyPool.Add(enemy);
+            enemy.transform.position = enemyPos;
+            enemy.SetActive(true);
+
+            activeEnemyPool.Add(enemy);
+        }
+        else
+        {
+            Debug.LogWarning("MAX. enemy amount reached, can't deploy more enemies until one is retired.");
+        }
     }
 
     public void RetireEnemy(GameObject retiredEnemy)
     {
-
-        activeEnemyPool.Remove(retiredEnemy);
-
-        retiredEnemy.SetActive(false);
-
-        inactiveEnemyPool.Enqueue(retiredEnemy);
         if (activeEnemyPool.Contains(retiredEnemy))
         {
-            
+            activeEnemyPool.Remove(retiredEnemy);
+
+            retiredEnemy.SetActive(false);
+
+            inactiveEnemyPool.Enqueue(retiredEnemy);
+        }
+        else
+        {
+            Debug.LogError("This Enemy was NOT in the activeEnemyPool");
         }
     }
 }
