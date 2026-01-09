@@ -9,7 +9,9 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTime = 4f;
     private float time;
 
+    [SerializeField]
     List<GameObject> activeEnemyPool = new List<GameObject>();
+    [SerializeField]
     Queue<GameObject> inactiveEnemyPool = new Queue<GameObject>();
 
     private void Start()
@@ -30,8 +32,9 @@ public class EnemySpawner : MonoBehaviour
         if(time > spawnTime)
         {
             time = 0;
-
-            DeployEnemy();
+            
+            if (inactiveEnemyPool.Count > 0)
+                DeployEnemy();
 
             spawnTime -= 0.3f;
             if(spawnTime < 0.5f)
@@ -53,8 +56,17 @@ public class EnemySpawner : MonoBehaviour
         activeEnemyPool.Add(enemy);
     }
 
-    public void RetireEnemy(GameObject)
+    public void RetireEnemy(GameObject retiredEnemy)
     {
 
+        activeEnemyPool.Remove(retiredEnemy);
+
+        retiredEnemy.SetActive(false);
+
+        inactiveEnemyPool.Enqueue(retiredEnemy);
+        if (activeEnemyPool.Contains(retiredEnemy))
+        {
+            
+        }
     }
 }

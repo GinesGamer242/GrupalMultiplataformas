@@ -1,0 +1,9 @@
+PERFORMANCE
+
+To do:
+- Replace GameManager's Update checks with events
+
+Doing:
+- Enemy pool instead of instanciating enemies each time they spawn
+
+Done:
