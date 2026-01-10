@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float m_Speed = 5f;
-    public float m_LifeTime = 5f;
+    public float m_Speed;
+    public float m_LifeTime;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(RetireBulletCoroutine());
     }

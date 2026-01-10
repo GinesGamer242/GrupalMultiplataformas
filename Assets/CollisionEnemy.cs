@@ -12,18 +12,27 @@ public class CollisionEnemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             var player = other.GetComponent<Player>();
-            Instantiate(explosion, transform.position, Quaternion.identity);
+
+            var newExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
+            Destroy(newExplosion, 1f);
+
             player.getHit();
-            player.health -= 10;
+
             GameManager.instance.enemySpawner.RetireEnemy(enemyObject);
         }
+
         if (other.CompareTag("Bullet"))
         {
-            Instantiate(explosion, transform.position, transform.rotation);
-            var player = FindObjectOfType<Player>();
+            var player = GameManager.instance.player;
+
+            var newExplosion = Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(newExplosion, 1f);
+
             player.AddPoints(100);
+
             var bullet = other.transform.parent.GetComponent<BulletBehaviour>();
             bullet.StopAllCoroutines();
+
             GameManager.instance.bulletManager.RetireBullet(other.transform.parent.gameObject);
             GameManager.instance.enemySpawner.RetireEnemy(enemyObject);
         }

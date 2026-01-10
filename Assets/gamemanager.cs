@@ -20,9 +20,6 @@ public class GameManager : MonoBehaviour
     //____________________________________
 
     public Player player;
-    public SceneAsset Menu;
-    public SceneAsset Win;
-    public SceneAsset Loss;
 
     public EnemySpawner enemySpawner;
     public BulletManager bulletManager;
@@ -33,19 +30,5 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.points >= 2000)
-        {
-            SceneManager.LoadScene(Win.name);
-        }
-
-        if (player.health < 0)
-        {
-            SceneManager.LoadScene(Loss.name);
-        }
     }
 }
