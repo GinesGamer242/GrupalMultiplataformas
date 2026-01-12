@@ -174,6 +174,7 @@ public class BasicFPCC : MonoBehaviour
         groundOffsetY = groundCheckY;
         ceilingOffsetY = ceilingCheckY;
 
+        SetLockCursor(true);
         RefreshCursor();
     }
 
@@ -441,19 +442,14 @@ public class BasicFPCC : MonoBehaviour
 
     void ToggleLockCursor()
     {
-        //cursorActive = !cursorActive;
-        //RefreshCursor();
+        cursorActive = !cursorActive;
+        RefreshCursor();
     }
 
     void RefreshCursor()
     {
         if (!cursorActive && Cursor.lockState != CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.Locked; }
         if (cursorActive && Cursor.lockState != CursorLockMode.None) { Cursor.lockState = CursorLockMode.None; }
-    }
-
-    private void LateUpdate()
-    {
-        Cursor.lockState = CursorLockMode.None;
     }
 
     // check the area above, for standing from crouch
