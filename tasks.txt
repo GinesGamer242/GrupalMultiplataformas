@@ -30,3 +30,4 @@ Done:
 - Changed scene4 loss camera to referred rendering because of amount of lights
 - Removed half enemies in loss scene and made terrain static
 - Made map scene 1 static
+- baked main menu lights

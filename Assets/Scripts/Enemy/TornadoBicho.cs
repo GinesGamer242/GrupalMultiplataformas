@@ -29,8 +29,6 @@ public class TornadoBicho : MonoBehaviour
     }
     private void Update()
     {
-        prevPos = transform.position;
-
         Vector3 pos = Vector3.zero;
 
         pos.x = Mathf.Sin(speed*3.2457f*(invert ? Time.time : -Time.time) + offset*Mathf.PI*2) * initialPos.y + initialPos.x;
@@ -38,8 +36,16 @@ public class TornadoBicho : MonoBehaviour
 
         pos.y = initialPos.y;
 
-        transform.forward = pos - prevPos;
+        Vector3 forwardVector = pos - prevPos;
+
+        // Dont assign forwardVector if its zero
+        if (forwardVector != Vector3.zero)
+        {
+            transform.forward = pos - prevPos;
+        }
 
         transform.position = pos;
+
+        prevPos = transform.position;
     }
 }
