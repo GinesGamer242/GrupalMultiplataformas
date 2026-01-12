@@ -12,15 +12,21 @@ Done:
 - Bullet pool instead of instantiating bullets when shooting
 - Destroy explosion effects
 
-[scripts general]
-- removed GetComponent / FindObject from Updates
+[Scripts general]
+- Removed GetComponent / FindObject from Updates
 - Replace GameManager's Update checks with events
 
 [Strings]
-- Removed string concatenarion in dialogue system and replaced by StringBuilder
+- Removed string concatenation in dialogue system and replaced by StringBuilder
 
 [Misc]
 - Folder refactoring
+- Fixed text possition in loss screen and made canvas scale with screen size
+- Improved colliders in scene 1
+- Made canvas overlay and scale with pixel size in scenes 1/2/3/4
 
-[Lighting]
+
+[Lighting / Draw calls]
 - Changed scene4 loss camera to referred rendering because of amount of lights
+- Removed half enemies in loss scene and made terrain static
+- Made map scene 1 static
