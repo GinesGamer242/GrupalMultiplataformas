@@ -12,8 +12,13 @@ public class DialogueManager : MonoBehaviour
 
     bool finished = false;
 
+    private Button m_Button;
+    private TextMeshProUGUI m_Text;
+
     void Start()
     {
+        m_Button = FindObjectOfType<Button>();
+        m_Text = GetComponent<TextMeshProUGUI>();
         StartCoroutine("ShowText");
     }
 
@@ -21,21 +26,20 @@ public class DialogueManager : MonoBehaviour
     {
         if (finished == true)
         {
-            FindObjectOfType<Button>().gameObject.SetActive(true);
+            m_Button.gameObject.SetActive(true);
         }
     }
 
     IEnumerator ShowText() 
     {
 
-        GetComponent<TextMeshProUGUI>().text = "";
+        m_Text.text = "";
         for (int i = 0; i < dialoguePhrases.Length; i++)
         {
-            GetComponent<TextMeshProUGUI>().text += "\n";
+            m_Text.text += "\n";
             foreach (var item in dialoguePhrases[i])
             {
-                GetComponent<TextMeshProUGUI>().text += item;
-
+                m_Text.text += item;
                 yield return new WaitForSeconds(time);
             }
         }
