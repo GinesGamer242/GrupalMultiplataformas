@@ -5,10 +5,15 @@ using UnityEngine;
 public class AttackEnemigo : MonoBehaviour
 {
     public float m_Speed = 1f;
+    public BasicFPCC player;
+
+    private void Start()
+    {
+        player = FindObjectOfType<BasicFPCC>();
+    }
 
     void Update()
     {
-        var player = FindObjectOfType<BasicFPCC>();
 
         transform.LookAt(player.transform);
 
