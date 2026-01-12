@@ -2,6 +2,8 @@ PERFORMANCE
 
 To do:
 - Pool of explosions
+- Remove "DebugSun" from scene1 when assingment is done
+- More enemies in the pool (3 is too little i think)
 
 Doing:
 
@@ -18,12 +20,14 @@ Done:
 
 [Strings]
 - Removed string concatenation in dialogue system and replaced by StringBuilder
+- Updated score/health text scripts to not alloc memory using SetText()
 
 [Misc]
 - Folder refactoring
 - Fixed text possition in loss screen and made canvas scale with screen size
 - Improved colliders in scene 1
 - Made canvas overlay and scale with pixel size in scenes 1/2/3/4
+- Fixed tornado bicho logic bug
 
 
 [Lighting / Draw calls]
