@@ -7,17 +7,24 @@ public class healthText : MonoBehaviour
 {
     private TextMeshProUGUI m_HealthText;
     private Player m_Player;
+    private float m_LastHealth = -1;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_HealthText = GetComponent<TextMeshProUGUI>();
         m_Player = FindObjectOfType<Player>();
+        m_LastHealth = m_Player.health;
+        m_HealthText.SetText("Health {0]", m_LastHealth);
     }
 
-    // Update is called once per frame
+    // SetText does not generate garbage
     void Update()
     {
-        m_HealthText.text = "Health: " + m_Player.health;
+        // Only refresh text when needed
+        if (m_Player.health != m_LastHealth)
+        {
+            m_LastHealth = m_Player.health;
+            m_HealthText.SetText("Health: {0}", m_LastHealth);
+        }
     }
 }

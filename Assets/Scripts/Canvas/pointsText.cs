@@ -7,17 +7,24 @@ public class pointsText : MonoBehaviour
 {
     private TextMeshProUGUI m_ScoreText;
     private Player m_Player;
+    private int m_LastPoints = -1;
 
-    // Start is called before the first frame update
     void Start()
     {
         m_ScoreText = GetComponent<TextMeshProUGUI>();
         m_Player = FindObjectOfType<Player>();
+        m_LastPoints = m_Player.points;
+        m_ScoreText.SetText("Score: {0}", m_LastPoints);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        m_ScoreText.text = "Score: " + m_Player.points;
+        // Only refresh when needed
+        if (m_Player.points != m_LastPoints)
+        {
+            m_LastPoints = m_Player.points;
+            m_ScoreText.SetText("Score: {0}", m_LastPoints);
+        }
     }
 }
