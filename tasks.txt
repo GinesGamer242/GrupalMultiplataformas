@@ -18,3 +18,9 @@ Done:
 
 [Strings]
 - Removed string concatenarion in dialogue system and replaced by StringBuilder
+
+[Misc]
+- Folder refactoring
+
+[Lighting]
+- Changed scene4 loss camera to referred rendering because of amount of lights
