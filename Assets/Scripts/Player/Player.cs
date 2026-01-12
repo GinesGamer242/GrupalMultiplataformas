@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
         health -= 10;
 
         if (health <= 0f)
+        {
+            Cursor.lockState = CursorLockMode.None;
             GameManager.instance.onPlayerLose.Invoke();
+        }
     }
 
     public void AddPoints(int amount)
@@ -20,6 +23,9 @@ public class Player : MonoBehaviour
         points += amount;
 
         if (points >= 2000)
+        {
+            Cursor.lockState = CursorLockMode.None;
             GameManager.instance.onPlayerWin.Invoke();
+        }
     }
 }
