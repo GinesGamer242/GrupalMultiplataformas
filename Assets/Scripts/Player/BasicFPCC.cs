@@ -59,6 +59,8 @@ public class BasicFPCC : MonoBehaviour
     [Tooltip("Disable if sending inputs from an external script")]
     public bool useLocalInputs = true;
     [Space(5)]
+    public VariableJoystick lookVariableJoystick;
+    public VariableJoystick moveVariableJoystick;
     public string axisLookHorzizontal = "Mouse X";             // Mouse to Look
     public string axisLookVertical = "Mouse Y";             // 
     public string axisMoveHorzizontal = "Horizontal";          // WASD to Move
@@ -182,12 +184,19 @@ public class BasicFPCC : MonoBehaviour
     {
         if (useLocalInputs)
         {
+#if UNITY_ANDROID
+            inputLookX = lookVariableJoystick.Horizontal;
+            inputLookY = lookVariableJoystick.Vertical;
+
+            inputMoveX = moveVariableJoystick.Horizontal;
+            inputMoveY = moveVariableJoystick.Vertical;
+#else
             inputLookX = Input.GetAxis(axisLookHorzizontal);
             inputLookY = Input.GetAxis(axisLookVertical);
 
             inputMoveX = Input.GetAxis(axisMoveHorzizontal);
             inputMoveY = Input.GetAxis(axisMoveVertical);
-
+#endif
             inputKeyRun = Input.GetKey(keyRun);
             inputKeyCrouch = Input.GetKey(keyCrouch);
 

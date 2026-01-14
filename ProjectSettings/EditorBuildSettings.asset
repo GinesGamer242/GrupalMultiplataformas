@@ -20,4 +20,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene4 Loss.unity
     guid: 4919e36263891a64ab36923daae7feda
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 821a10a1c6e5b9a4c9c499ead71e9b48, type: 2}
