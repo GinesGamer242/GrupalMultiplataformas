@@ -29,14 +29,16 @@ let the game build
 - Improved colliders in scene 1
 - Made canvas overlay and scale with pixel size in scenes 1/2/3/4
 - Fixed tornado bicho logic bug
-- Changed player params to be able to jump/slide/crouch/run and added new layer for the map to check raycasts 
+- Changed player params (crouch/walk/run speed, ground/ceiling check Y) to be able to jump/slide/crouch/run 
+and added new layer for the map to check raycasts 
 
 [Lighting / Draw calls]
 - Changed scene4 loss camera to referred rendering because of amount of lights
 - Removed half enemies in loss scene and made terrain static
-- Made map scene 1 static
+- Made map in scene 1 static
 - baked main menu lights
 
 [Android port]
 - Added joysticks
 - Added action buttons
+- Auto shoot when looking at enemy
