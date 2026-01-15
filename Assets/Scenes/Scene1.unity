@@ -4182,8 +4182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32434abdead7cd45af87d01e49c3dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsPressed: 0
-  m_IsHeld: 0
 --- !u!1 &921192700
 GameObject:
   m_ObjectHideFlags: 0
@@ -5737,10 +5735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c26f725c0626bb4594312113d834e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpButton: {fileID: 899035870}
-  m_SlideButton: {fileID: 1337719966}
-  m_CrouchButton: {fileID: 1579348620}
-  m_RunButton: {fileID: 1908115520}
 --- !u!4 &1147419975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: bdd8b59fd28ade14d951aeeb4c9644d0, type: 3}
@@ -6595,8 +6589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32434abdead7cd45af87d01e49c3dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsPressed: 0
-  m_IsHeld: 0
 --- !u!1 &1350943644
 GameObject:
   m_ObjectHideFlags: 0
@@ -7670,8 +7662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32434abdead7cd45af87d01e49c3dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsPressed: 0
-  m_IsHeld: 0
 --- !u!4 &1579440486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: bdd8b59fd28ade14d951aeeb4c9644d0, type: 3}
@@ -8100,9 +8090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d78a2e9e9bc7e14ebddb657a4fc4a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 102900000, guid: d42ef42205667ae4e81a6c6e26490667, type: 3}
-  - {fileID: 102900000, guid: 4919e36263891a64ab36923daae7feda, type: 3}
+  sceneNames:
+  - Scene3 Win
+  - Scene4 Loss
 --- !u!1 &1750825426
 GameObject:
   m_ObjectHideFlags: 0
@@ -9099,8 +9089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32434abdead7cd45af87d01e49c3dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsPressed: 0
-  m_IsHeld: 0
 --- !u!4 &2015335297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: bdd8b59fd28ade14d951aeeb4c9644d0, type: 3}

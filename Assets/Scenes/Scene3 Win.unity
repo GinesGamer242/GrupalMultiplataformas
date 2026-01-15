@@ -804,8 +804,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d78a2e9e9bc7e14ebddb657a4fc4a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+  sceneNames:
+  - MainMenu
 --- !u!1 &2106099131
 GameObject:
   m_ObjectHideFlags: 0

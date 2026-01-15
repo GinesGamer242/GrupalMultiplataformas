@@ -372,8 +372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d78a2e9e9bc7e14ebddb657a4fc4a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 102900000, guid: 3f79e6a6b7e948c44adf03e2b9d89827, type: 3}
+  sceneNames:
+  - Scene1
 --- !u!1 &479401214
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 259.9
+  m_fontSize: 232.3
   m_fontSizeBase: 62.36
   m_fontWeight: 400
   m_enableAutoSizing: 1
