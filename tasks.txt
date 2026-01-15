@@ -2,7 +2,6 @@ PERFORMANCE
 
 To do:
 - Pool of explosions
-- Remove "DebugSun" from scene1 when assingment is done
 - More enemies in the pool (3 is too little i think)
 
 Doing:
