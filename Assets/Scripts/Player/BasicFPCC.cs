@@ -161,6 +161,16 @@ public class BasicFPCC : MonoBehaviour
         ProcessMovement();
     }
 
+    private void LateUpdate()
+    {
+#if UNITY_ANDROID
+        if(Cursor.lockState != CursorLockMode.None)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+#endif
+    }
+
     void Initialize()
     {
         if (!cameraTx) { Debug.LogError("* " + gameObject.name + ": BasicFPCC has NO CAMERA ASSIGNED in the Inspector *"); }
@@ -196,13 +206,14 @@ public class BasicFPCC : MonoBehaviour
 
             inputMoveX = Input.GetAxis(axisMoveHorzizontal);
             inputMoveY = Input.GetAxis(axisMoveVertical);
-#endif
+
             inputKeyRun = Input.GetKey(keyRun);
             inputKeyCrouch = Input.GetKey(keyCrouch);
 
             inputKeyDownJump = Input.GetKeyDown(keyJump);
             inputKeyDownSlide = Input.GetKeyDown(keySlide);
             inputKeyDownCursor = Input.GetKeyDown(keyToggleCursor);
+#endif
         }
 
         if (inputKeyDownCursor)
