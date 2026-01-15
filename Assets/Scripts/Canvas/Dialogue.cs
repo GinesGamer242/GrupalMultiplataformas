@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
 using System.Text;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -44,7 +42,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShowText() 
+    IEnumerator ShowText()
     {
         m_TextBox.text = "";
         for (int i = 0; i < dialoguePhrases.Length; i++)

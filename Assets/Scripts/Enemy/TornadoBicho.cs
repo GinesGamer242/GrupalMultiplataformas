@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TornadoBicho : MonoBehaviour
@@ -31,8 +29,8 @@ public class TornadoBicho : MonoBehaviour
     {
         Vector3 pos = Vector3.zero;
 
-        pos.x = Mathf.Sin(speed*3.2457f*(invert ? Time.time : -Time.time) + offset*Mathf.PI*2) * initialPos.y + initialPos.x;
-        pos.z = Mathf.Cos(speed*3.2365f*(invert ? Time.time : -Time.time) + offset * Mathf.PI*2) * initialPos.y + initialPos.z;
+        pos.x = Mathf.Sin(speed * 3.2457f * (invert ? Time.time : -Time.time) + offset * Mathf.PI * 2) * initialPos.y + initialPos.x;
+        pos.z = Mathf.Cos(speed * 3.2365f * (invert ? Time.time : -Time.time) + offset * Mathf.PI * 2) * initialPos.y + initialPos.z;
 
         pos.y = initialPos.y;
 

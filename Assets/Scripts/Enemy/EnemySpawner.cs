@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,15 +26,15 @@ public class EnemySpawner : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        if(time > spawnTime)
+        if (time > spawnTime)
         {
             time = 0;
-            
+
             if (inactiveEnemyPool.Count > 0)
                 DeployEnemy();
 
             spawnTime -= 0.3f;
-            if(spawnTime < 0.5f)
+            if (spawnTime < 0.5f)
             {
                 spawnTime = 0.5f;
             }
@@ -44,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void DeployEnemy()
     {
-        if (activeEnemyPool.Count <  maxEnemyAmount)
+        if (activeEnemyPool.Count < maxEnemyAmount)
         {
             var enemyPos = new Vector3(Random.value * 50, Random.Range(0f, 5f), Random.value * 50) + transform.position;
 

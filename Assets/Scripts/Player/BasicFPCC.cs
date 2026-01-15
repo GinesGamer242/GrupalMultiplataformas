@@ -146,7 +146,7 @@ public class BasicFPCC : MonoBehaviour
     public bool isCeiling = false;
     private float ceilingOffsetY = 0;                // calculated offset relative to height
     [Space(5)]
-    public bool cursorActive = false;                // cursor state
+    public bool lockCursor = false;                // cursor state
 
 
     void Start()
@@ -187,7 +187,6 @@ public class BasicFPCC : MonoBehaviour
         ceilingOffsetY = ceilingCheckY;
 
         SetLockCursor(true);
-        RefreshCursor();
     }
 
     void ProcessInputs()
@@ -456,20 +455,20 @@ public class BasicFPCC : MonoBehaviour
     // lock/hide or show/unlock cursor
     public void SetLockCursor(bool doLock)
     {
-        cursorActive = doLock;
+        lockCursor = doLock;
         RefreshCursor();
     }
 
     void ToggleLockCursor()
     {
-        cursorActive = !cursorActive;
+        lockCursor = !lockCursor;
         RefreshCursor();
     }
 
     void RefreshCursor()
     {
-        if (!cursorActive && Cursor.lockState != CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.Locked; }
-        if (cursorActive && Cursor.lockState != CursorLockMode.None) { Cursor.lockState = CursorLockMode.None; }
+        if (lockCursor && Cursor.lockState != CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.Locked; }
+        if (!lockCursor && Cursor.lockState != CursorLockMode.None) { Cursor.lockState = CursorLockMode.None; }
     }
 
     // check the area above, for standing from crouch

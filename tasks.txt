@@ -17,6 +17,8 @@ Done:
 [Scripts general]
 - Removed GetComponent / FindObject from Updates
 - Replace GameManager's Update checks with events
+- Replaced class SceneAsset in SceneManagement for strings because SceneAsset is editor only and wouldnt
+let the game build
 
 [Strings]
 - Removed string concatenation in dialogue system and replaced by StringBuilder

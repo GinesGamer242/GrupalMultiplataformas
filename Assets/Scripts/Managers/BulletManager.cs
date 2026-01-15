@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ public class BulletManager : MonoBehaviour
 
     private void Start()
     {
-        for (int  i = 0; i < maxBulletAmount; i++)
+        for (int i = 0; i < maxBulletAmount; i++)
         {
             GameObject newBullet = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
             newBullet.gameObject.SetActive(false);
