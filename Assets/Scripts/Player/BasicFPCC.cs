@@ -77,11 +77,11 @@ public class BasicFPCC : MonoBehaviour
     [HideInInspector] public float inputLookY = 0;      //
     [HideInInspector] public float inputMoveX = 0;      // range -1f to +1f
     [HideInInspector] public float inputMoveY = 0;      // range -1f to +1f
-    [HideInInspector] public bool inputKeyRun = false;  // is key Held
-    [HideInInspector] public bool inputKeyCrouch = false;  // is key Held
-    [HideInInspector] public bool inputKeyDownJump = false;  // is key Pressed
-    [HideInInspector] public bool inputKeyDownSlide = false;  // is key Pressed
-    [HideInInspector] public bool inputKeyDownCursor = false;  // is key Pressed
+    [HideInInspector] public bool inputRun = false;  // is key Held
+    [HideInInspector] public bool inputCrouch = false;  // is key Held
+    [HideInInspector] public bool inputJump = false;  // is key Pressed
+    [HideInInspector] public bool inputSlide = false;  // is key Pressed
+    [HideInInspector] public bool inputCursor = false;  // is key Pressed
 
     [Header("Look Settings")]
     public float mouseSensitivityX = 2f;             // speed factor of look X
@@ -207,16 +207,16 @@ public class BasicFPCC : MonoBehaviour
             inputMoveX = Input.GetAxis(axisMoveHorzizontal);
             inputMoveY = Input.GetAxis(axisMoveVertical);
 
-            inputKeyRun = Input.GetKey(keyRun);
-            inputKeyCrouch = Input.GetKey(keyCrouch);
+            inputRun = Input.GetKey(keyRun);
+            inputCrouch = Input.GetKey(keyCrouch);
 
-            inputKeyDownJump = Input.GetKeyDown(keyJump);
-            inputKeyDownSlide = Input.GetKeyDown(keySlide);
-            inputKeyDownCursor = Input.GetKeyDown(keyToggleCursor);
+            inputJump = Input.GetKeyDown(keyJump);
+            inputSlide = Input.GetKeyDown(keySlide);
+            inputCursor = Input.GetKeyDown(keyToggleCursor);
 #endif
         }
 
-        if (inputKeyDownCursor)
+        if (inputCursor)
         {
             ToggleLockCursor();
         }
@@ -264,12 +264,12 @@ public class BasicFPCC : MonoBehaviour
         // - Run and Crouch -
 
         // if grounded, and not stuck on ceiling
-        if (isGrounded && !isCeiling && inputKeyRun)
+        if (isGrounded && !isCeiling && inputRun)
         {
             nextSpeed = runSpeed; // to run speed
         }
 
-        if (inputKeyCrouch) // crouch
+        if (inputCrouch) // crouch
         {
             vScale = 0.5f;
             h = 0.5f * defaultHeight;
@@ -279,7 +279,7 @@ public class BasicFPCC : MonoBehaviour
         // - Slide -
 
         // if not sliding, and not stuck on ceiling, and is running
-        if (!isSliding && !isCeiling && inputKeyRun && inputKeyDownSlide) // slide
+        if (!isSliding && !isCeiling && inputRun && inputSlide) // slide
         {
             // check velocity is faster than walkSpeed
             if (currSpeed > walkSpeed)
@@ -398,7 +398,7 @@ public class BasicFPCC : MonoBehaviour
             }
 
             // - Jump -
-            if (!isSliding && !isCeiling && inputKeyDownJump) // jump
+            if (!isSliding && !isCeiling && inputJump) // jump
             {
                 fauxGravity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }

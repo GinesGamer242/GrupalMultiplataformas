@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject m_Joysticks;
+    public GameObject m_AndroidUI;
 
     private void Start()
     {
 #if UNITY_ANDROID
-     m_Joysticks.SetActive(true);
+        m_AndroidUI.SetActive(true);
 #else
-    m_Joysticks.SetActive(false);
+        m_AndroidUI.SetActive(false);
 #endif
     }
 }
