@@ -5,10 +5,6 @@ To do:
 - Remove "DebugSun" from scene1 when assingment is done
 - More enemies in the pool (3 is too little i think)
 
-- Fix joysticks
-- Fix health text
-
-
 Doing:
 
 
@@ -42,4 +38,4 @@ Done:
 
 [Android port]
 - Added joysticks
-- 
+- Added action buttons
