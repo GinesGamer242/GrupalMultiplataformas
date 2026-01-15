@@ -5,6 +5,10 @@ To do:
 - Remove "DebugSun" from scene1 when assingment is done
 - More enemies in the pool (3 is too little i think)
 
+- Fix joysticks
+- Fix health text
+
+
 Doing:
 
 
@@ -28,10 +32,14 @@ Done:
 - Improved colliders in scene 1
 - Made canvas overlay and scale with pixel size in scenes 1/2/3/4
 - Fixed tornado bicho logic bug
-
+- Changed player params to be able to jump/slide/crouch/run and added new layer for the map to check raycasts 
 
 [Lighting / Draw calls]
 - Changed scene4 loss camera to referred rendering because of amount of lights
 - Removed half enemies in loss scene and made terrain static
 - Made map scene 1 static
 - baked main menu lights
+
+[Android port]
+- Added joysticks
+- 

@@ -14,7 +14,7 @@ public class healthText : MonoBehaviour
         m_HealthText = GetComponent<TextMeshProUGUI>();
         m_Player = FindObjectOfType<Player>();
         m_LastHealth = m_Player.health;
-        m_HealthText.SetText("Health {0]", m_LastHealth);
+        m_HealthText.SetText("Health {0}", m_LastHealth);
     }
 
     // SetText does not generate garbage
