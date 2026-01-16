@@ -1,13 +1,3 @@
-PERFORMANCE
-
-To do:
-- Pool of explosions
-- More enemies in the pool (3 is too little i think)
-
-Doing:
-
-
-Done:
 [Instances]
 - Enemy pool instead of instanciating enemies each time they spawn
 - Bullet pool instead of instantiating bullets when shooting
